@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import './App.css'
-import { H1 } from './components/H1'
+import { useState } from "react";
+import "./App.css";
+import { NavBar } from "./components/NavBar";
+import { ItemListContainer } from "./components/ItemListContainer";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <div>
-      <H1 />
-    </div>
-  )
+    <>
+      <NavBar />
+      <ItemListContainer greetings="Bienvenidos a mi pagina Ecommerce"/>
+    </>
+  );
 }
 
-export default App
+export default App;
