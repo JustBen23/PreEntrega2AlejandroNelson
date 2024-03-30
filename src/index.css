@@ -22,22 +22,24 @@ a {
   font-weight: 500;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.87);
+  transition: .6s;
 }
 
 a:hover {
-  color: #535bf2;
+  color: rgb(154, 48, 48);
 }
 
-li {
+span {
   list-style: none;
   display: inline;
-  margin: 0 .7rem;
+  margin: 0 0.7rem;
 }
 
 nav {
-  padding: .5rem;
+  padding: 0.5rem 2rem;
   background-color: #1b1b1b;
   position: sticky;
+  margin-bottom: 1.7rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -45,8 +47,18 @@ nav {
   height: 50px;
 }
 
-nav div {
+nav .logoNav {
   margin-right: auto;
+}
+
+.carrito_de_compras {
+  margin: 0 0.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.cart_counter {
+  margin: 0 0.5rem;
 }
 
 img {
@@ -63,4 +75,89 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.contenedor_producto {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.contenedor_producto .tarjeta_producto {
+  position: relative;
+  max-width: 300px;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-content: center;
+  padding: 1rem;
+  padding-bottom: 3rem;
+  border-radius: 50px;
+  background: linear-gradient(315deg, #202020, #272727);
+  box-shadow: -9px -9px 18px #1f1f1f, 9px 9px 18px #292929;
+  overflow: hidden;
+}
+
+.contenedor_producto .tarjeta_producto img {
+  width: 100%;
+  height: 40%;
+  border-radius: 40px;
+}
+
+.contenedor_producto .tarjeta_producto button {
+  position: absolute;
+  border: none;
+  width: 100%;
+  padding: 20px 15px;
+  bottom: 0;
+  margin: 0;
+  left: 0;
+  box-shadow: -9px -9px 18px #1f1f1f, 9px 9px 18px #292929; 
+  background: rgb(86, 34, 34);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.contenedor_producto .tarjeta_producto button:hover {
+  background-color: rgb(113, 0, 0);
+}
+
+.contenedor_producto_general {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor_producto_general .contenedor_producto_individual {
+  width: 60%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border-radius: 50px;
+  background: linear-gradient(315deg, #202020, #272727);
+  box-shadow: -9px -9px 18px #1f1f1f, 9px 9px 18px #292929;
+  overflow: hidden;
+}
+
+.contenedor_producto_general .contenedor_producto_individual img {
+  width: 100%;
+  height: 60%;
+}
+
+.contenedor_producto_general
+  .contenedor_producto_individual
+  .contenedor_contenido_producto {
+  /* width: 50%; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
 }

@@ -1,0 +1,23 @@
+[
+	{
+		"name": "Acer Nitro 5 Portátil",
+		"id": "1",
+		"category": "Laptops",
+		"detail": "Windows 11 Home, Procesador Intel® Core™ i5-12500H Dodeca-core (12 núcleos) 2,50 GHz, 39,6 cm (15,6') Full HD (1920 x 1080) 16:9 IPS 144 Hz, 16 GB, DDR5 SDRAM, 512 GB SSD, NVIDIA® GeForce RTX™ 4050 con 6 GB de memoria dedicada",
+		"img": "https://cnnespanol.cnn.com/wp-content/uploads/2021/08/acer-computadora-gaming.png"
+	},
+	{
+		"name": "Acer Nitro VG0 Monitor",
+		"id": 2,
+		"category": "Monitores",
+		"detail": "Pantalla: 54,6 cm (21,5') Full HD (1920 x 1080) 100 Hz HDMI, 75 Hz VGA, Tecnología de Pantalla: Vertical Alignment (VA) (178°x178°, FreeSync (HDMI VRR), Entradas: HDMI, VGA,Tiempo de Respuesta: 1 ms VRB, Brillo: 250 cd/m²",
+		"img": "https://m.media-amazon.com/images/S/aplus-media/vc/904ac61c-23be-464c-968e-59f14978727e.__CR974,0,1600,1200_PT0_SX600_V1___.jpg"
+	},
+	{
+		"name": "Acer Nitro Gaming Teclado",
+		"id": 3,
+		"category": "Teclados",
+		"detail": "Teclado Gaming de membrana sin pad numérico con formato del 80 %, Reducción de imágenes fantasma en 19 teclas, Retroiluminación RGB de tres zonas, Calificación de cinco millones de pulsaciones de tecla",
+		"img": "https://clasicdn.paraguay.com/pictures/2022/06/09/2045646/8134464L.webp"
+	}
+]
