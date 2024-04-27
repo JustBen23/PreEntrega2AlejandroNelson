@@ -1,23 +1,42 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
+
 import { CartWidget } from "./CartWidget";
 
-import data from "../data/data.json";
+export const NavBar = () => {
+  const [categorias, setCategorias] = useState([]);
 
-const categorias = data.map((categoria) => categoria.category);
+  useEffect(() => {
 
-const listaDeCategorias = new Set(categorias);
+  const db = getFirestore();
+  const refDoc = collection(db, "productos");
 
-export const NavBar = () => (
-  <>
-    <nav>
-      <NavLink to="/" className="logoNav">Nitro Store</NavLink>
-      <NavLink to="/"><span>Home</span></NavLink>
-      {[...listaDeCategorias].map((category) => (
-        <NavLink key={category} to={`/category/${category}`}>
-          <span>{category}</span>
+  getDocs(refDoc).then((snapshot) => {
+    snapshot.docs.map((doc) => {
+      setCategorias((prev) => [...prev, doc.get("categoryId")]);
+    });
+  });
+  }, []);
+
+  const listaDeCategorias = new Set(categorias);
+
+  return (
+    <>
+      <nav>
+        <NavLink to="/" className="logoNav">
+          Nitro Store
         </NavLink>
-      ))}
-      <CartWidget />
-    </nav>
-  </>
-);
+        <NavLink to="/">
+          <span>Home</span>
+        </NavLink>
+        {[...listaDeCategorias].map((category) => (
+          <NavLink key={category} to={`/category/${category}`}>
+            <span>{category}</span>
+          </NavLink>
+        ))}
+          <CartWidget />
+      </nav>
+    </>
+  );
+};
