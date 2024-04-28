@@ -5,7 +5,12 @@ import { useContext } from "react";
 export const CartWidget = () => {
   const { productosCarro } = useContext(CartContext);
 
-  const totalProductos = productosCarro.reduce((acu, val) => acu + val.cantidad,0);
+  const totalProductos = productosCarro.reduce(
+    (acu, val) => acu + val.cantidad,
+    0
+  );
+
+  if (!totalProductos) return null;
 
   return (
     <>

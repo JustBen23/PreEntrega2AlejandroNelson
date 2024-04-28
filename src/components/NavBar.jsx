@@ -8,15 +8,14 @@ export const NavBar = () => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
+    const db = getFirestore();
+    const refDoc = collection(db, "productos");
 
-  const db = getFirestore();
-  const refDoc = collection(db, "productos");
-
-  getDocs(refDoc).then((snapshot) => {
-    snapshot.docs.map((doc) => {
-      setCategorias((prev) => [...prev, doc.get("categoryId")]);
+    getDocs(refDoc).then((snapshot) => {
+      snapshot.docs.map((doc) => {
+        setCategorias((prev) => [...prev, doc.get("categoryId")]);
+      });
     });
-  });
   }, []);
 
   const listaDeCategorias = new Set(categorias);
@@ -35,7 +34,7 @@ export const NavBar = () => {
             <span>{category}</span>
           </NavLink>
         ))}
-          <CartWidget />
+        <CartWidget />
       </nav>
     </>
   );

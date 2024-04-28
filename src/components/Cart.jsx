@@ -45,9 +45,11 @@ export const Cart = () => {
     });
   };
 
+  if (totalCompra === 0) return <h1>Tu carrito se encuentra vacío</h1>;
+
   return (
     <div className="lista_producttos_carrito">
-      <h1>Resumen del carrito:</h1>
+      <h1>Resumen de tu compra:</h1>
       {productosCarro.map((item) => (
         <div key={item.id} className="objeto_lista_carrito">
           <div className="detalles_producto_carrito">

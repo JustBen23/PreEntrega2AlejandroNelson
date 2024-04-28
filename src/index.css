@@ -137,14 +137,13 @@ h1 {
 
 .contenedor_producto_general .contenedor_producto_individual {
   width: 60%;
-  height: 80vh;
+  height: auto;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   border-radius: 50px;
   background: linear-gradient(315deg, #202020, #272727);
   box-shadow: -9px -9px 18px #1f1f1f, 9px 9px 18px #292929;
-  overflow: hidden;
 }
 
 .contenedor_producto_general .contenedor_producto_individual img {

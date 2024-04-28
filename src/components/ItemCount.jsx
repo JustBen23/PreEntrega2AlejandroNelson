@@ -21,7 +21,6 @@ export const ItemCount = ({ onAdd, stock }) => {
   };
 
   return (
-    
     <div>
       <mark onClick={handleDecrease}>-</mark>
       <input value={count} readOnly />

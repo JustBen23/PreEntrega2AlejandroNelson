@@ -13,6 +13,7 @@ import { ItemList } from "./ItemList";
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const { categoryId } = useParams();
+  const [isLoading, steIsLoading] = useState(true);
 
   useEffect(() => {
     const db = getFirestore();
@@ -27,14 +28,18 @@ export const ItemListContainer = () => {
       );
     }
 
-    getDocs(refDoc).then((snapshot) => {
-      setProducts(
-        snapshot.docs.map((doc) => {
-          return { id: doc.id, ...doc.data() };
-        })
-      );
-    });
+    getDocs(refDoc)
+      .then((snapshot) => {
+        setProducts(
+          snapshot.docs.map((doc) => {
+            return { id: doc.id, ...doc.data() };
+          })
+        );
+      })
+      .finally(() => steIsLoading(false));
   }, [categoryId]);
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
