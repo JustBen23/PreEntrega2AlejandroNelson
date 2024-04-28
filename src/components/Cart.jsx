@@ -48,21 +48,30 @@ export const Cart = () => {
   if (totalCompra === 0) return <h1>Tu carrito se encuentra vacío</h1>;
 
   return (
-    <div className="lista_producttos_carrito">
-      <h1>Resumen de tu compra:</h1>
+    <div className="lista_productos_carrito">
+      <h1>Resumen de tu compra</h1>
       {productosCarro.map((item) => (
         <div key={item.id} className="objeto_lista_carrito">
-          <div className="detalles_producto_carrito">
-            <h2>{item.title}</h2>
-            <p>{item.cantidad}</p>
-          </div>
+          <img src={item.image} alt="" />
+          <h2>{item.title}</h2>
+          <p>{item.cantidad}</p>
           <p>{item.price}$</p>
-          <button onClick={() => removeItem(item.id)}>Eliminar</button>
-          <div className="resumen_compra"></div>
+          <div>
+            <button className="eliminar" onClick={() => removeItem(item.id)}>
+              Eliminar
+            </button>
+          </div>
         </div>
       ))}
 
-      <button onClick={() => clear()}>Vaciar</button>
+      <div className="resumen_de_compra">
+        <p>Total de tu compra: {totalCompra}</p>
+        <button className="vaciar" onClick={() => clear()}>
+          Vaciar carrito
+        </button>
+      </div>
+
+      <h1>Finaliza tu compra</h1>
       <form>
         <label>Nombre: </label>
         <input
@@ -78,7 +87,7 @@ export const Cart = () => {
           name="Correo"
           onChange={handleChange}
         />
-        <button type="button" onClick={handleOrder}>
+        <button className="comprar" type="button" onClick={handleOrder}>
           Comprar
         </button>
       </form>

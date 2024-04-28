@@ -11,17 +11,18 @@ export const ItemDetail = ({ productId }) => {
   };
 
   return (
+  <>
     <div className="contenedor_producto_general">
       <div className="contenedor_producto_individual">
         <img src={productId?.image} alt={productId.title} />
         <div className="contenedor_contenido_producto">
-          <h2>Detalle del producto:</h2>
           <h2>{productId?.title}</h2>
           <p>{productId?.description}</p>
-          <p>Stock: {productId?.stock}</p>
+          <h3>Stock: {productId?.stock}</h3>
           <ItemCount onAdd={add} stock={productId?.stock} />
         </div>
       </div>
     </div>
+    </>
   );
 };
