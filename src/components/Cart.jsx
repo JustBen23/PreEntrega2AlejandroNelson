@@ -23,10 +23,12 @@ export const Cart = () => {
     });
   };
 
-  const totalCompra = productosCarro.reduce(
-    (acu, act) => acu + act.price * act.canttidad,
-    0
-  );
+  // const totalCompra = productosCarro.reduce(
+  //   (acu, act) => acu + act.price * act.canttidad,
+  //   0
+  // );
+
+  let totalCompra = productosCarro.reduce((acumulador, valor) => acumulador + valor.price * valor.cantidad , 0);
 
   const handleOrder = () => {
     const orden = {
@@ -55,7 +57,7 @@ export const Cart = () => {
           <img src={item.image} alt="" />
           <h2>{item.title}</h2>
           <p>{item.cantidad}</p>
-          <p>{item.price}$</p>
+          <p>{item.price * item.cantidad}$</p>
           <div>
             <button className="eliminar" onClick={() => removeItem(item.id)}>
               Eliminar
@@ -65,7 +67,7 @@ export const Cart = () => {
       ))}
 
       <div className="resumen_de_compra">
-        <p>Total de tu compra: {totalCompra}</p>
+        <p>Total de tu compra: {totalCompra}$</p>
         <button className="vaciar" onClick={() => clear()}>
           Vaciar carrito
         </button>
